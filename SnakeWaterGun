@@ -1,0 +1,30 @@
+"""SNAKE WATER GUN GAME"""
+import random
+global User
+User = 0
+global Machine
+Machine = 0
+print("Welcome to Snake Gun Game\nS:Snake\t\tW:Water\t\tG:Gun")
+for i in range(5):
+    ch = input("::::Enter your character:::")
+    user = ch.upper()
+    list = ['S', 'W', 'G']
+    machine = random.choice(list)
+    print(":::machine enter:::", machine)
+    if user == 'S' and machine == 'W' or user == 'W' and machine == 'G' or user == 'G' and machine == 'S':
+        User = User + 1
+        print("user win")
+    elif user == 'S' and machine == 'S' or user == 'W' and machine == 'W' or user == 'G' and machine == 'G':
+        print("match Draw")
+    elif user == 'W' and machine == 'S' or user == 'G' and machine == 'W' or user == 'S' and machine == 'G':
+        print("Machine win")
+        Machine = Machine + 1
+    else:
+        print("Sorry you have input wrong input")
+print("\n\n\nMatch Result\n")
+if User > Machine:
+    print("!!\tYou  Win and Your points are:", User, "!!")
+elif User == Machine:
+    print("Match Draw")
+else:
+    print("!!\tSorry ! Machine Win and Machine points are:", Machine, "!!")
