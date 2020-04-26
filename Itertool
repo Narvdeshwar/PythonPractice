@@ -1,0 +1,11 @@
+You are given a two lists  A and B . Your task is to compute their cartesian product AXB.
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+A=[int(x) for x in input().split()]
+B=[int(x) for x in input().split()]
+l=[]
+l.append(A)
+l.append(B)
+m=list(product(*l))
+for i in range(0,len(m)):
+    print(m[i],end=' ')
