@@ -1,0 +1,5 @@
+n=int(input())
+a = list(map(int, input().rstrip().split()))
+m=a[::-1]
+for i in range(0,len(m)):
+    print(m[i],end=" ")
