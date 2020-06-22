@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    cp,cn,cz=0,0,0
+    for i in arr:
+        if arr[i]<0:
+            cn+=1
+        elif arr[i]>0:
+            cp+=1
+        else:
+            cz+=1
+    return cp/len(arr),cn/len(arr),cz/len(arr)    
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    m=plusMinus(arr)
+    for i in range(len(m)):
+        print('%.6f'%m[i])
+
